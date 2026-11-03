@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan — Nama Mempelai</title>
+<style>
+:root{
+  --bg:#f3eee5; --paper:#fffdf8; --text:#3b3028;
+  --muted:#82766a; --accent:#6d5948; --gold:#c3a46b; --line:#dfd2c1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif}
+.page{max-width:760px;margin:auto;background:var(--paper);min-height:100vh;box-shadow:0 0 35px #00000010}
+section{padding:70px 28px;text-align:center;position:relative}
+section:not(.hero)::before{content:"";display:block;width:42px;height:1px;background:var(--gold);margin:0 auto 28px;opacity:.9}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+background:
+linear-gradient(#fffaf0e6,#fffaf0e6),
+url("foto-cover.jpg") center/cover no-repeat}
+.kicker{letter-spacing:4px;text-transform:uppercase;font:12px Arial,sans-serif;color:var(--muted)}
+h1{font-size:clamp(42px,9vw,72px);font-weight:400;line-height:1.05;margin:18px 0;color:#3b3028}
+h2{font-size:30px;font-weight:400;margin:10px 0 25px;color:#4a3a2e}
+h2::after{content:"";display:block;width:38px;height:1px;background:var(--gold);margin:14px auto 0}
+.names{font-size:34px;margin:25px 0;color:var(--accent)}
+.date{font:14px Arial,sans-serif;letter-spacing:2px}
+.divider{width:60px;height:1px;background:var(--gold);margin:28px auto}
+.btn{display:inline-block;padding:13px 24px;border:1px solid var(--gold);color:#5d4938;background:#fffaf2cc;
+text-decoration:none;font:13px Arial,sans-serif;letter-spacing:1px;border-radius:2px;margin:5px}
+.card{background:#fbf7ef;border:1px solid var(--line);box-shadow:0 8px 25px #6b503012;padding:30px 20px;margin:16px auto;max-width:500px}
+.label{font:11px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.time{font-size:24px;margin:10px 0}
+.countdown{display:flex;justify-content:center;gap:12px;margin:25px 0;flex-wrap:wrap}
+.countdown div{min-width:70px;padding:12px;border:1px solid var(--line)}
+.countdown b{display:block;font-size:25px;font-weight:400}
+.countdown span{font:10px Arial,sans-serif;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:600px;margin:auto}
+.gallery img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.quote{font-size:18px;line-height:1.8;font-style:italic;max-width:570px;margin:auto}
+.footer{padding:50px 25px;text-align:center;background:#eee5d8}
+@media(max-width:500px){section{padding:55px 20px}.names{font-size:29px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<section class="hero" id="home">
+  <div>
+    <div class="kicker">The Wedding Of</div>
+    <h1>Nama<br>&amp;<br>Nama</h1>
+    <div class="divider"></div>
+    <div class="date">MINGGU, 12 DESEMBER 2026</div>
+    <p style="color:var(--muted)">Dengan penuh kebahagiaan, kami mengundang Anda untuk hadir di hari istimewa kami.</p>
+    <a class="btn" href="#acara">Buka Undangan</a>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">Assalamu'alaikum Warahmatullahi Wabarakatuh</div>
+  <h2>Dengan memohon rahmat dan ridho Allah SWT</h2>
+  <p class="quote">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya.”</p>
+  <p style="color:var(--muted)">QS. Ar-Rum: 21</p>
+</section>
+
+<section>
+  <div class="kicker">Mempelai</div>
+  <div class="names">Nama Mempelai Pria</div>
+  <p>Putra dari Bapak Nama Ayah &amp; Ibu Nama Ibu</p>
+  <div class="divider"></div>
+  <div class="names">&amp;</div>
+  <div class="names">Nama Mempelai Wanita</div>
+  <p>Putri dari Bapak Nama Ayah &amp; Ibu Nama Ibu</p>
+</section>
+
+<section id="acara">
+  <div class="kicker">Save The Date</div>
+  <h2>Detail Acara</h2>
+
+  <div class="card">
+    <div class="label">Akad Nikah</div>
+    <div class="time">09.00 WIB</div>
+    <p>Minggu, 12 Desember 2026</p>
+    <p>Masjid / Gedung Nama Tempat</p>
+  </div>
+
+  <div class="card">
+    <div class="label">Resepsi</div>
+    <div class="time">11.00 — 14.00 WIB</div>
+    <p>Minggu, 12 Desember 2026</p>
+    <p>Gedung Nama Tempat<br>Alamat lengkap lokasi</p>
+    <a class="btn" href="https://maps.google.com" target="_blank">Google Maps</a>
+  </div>
+
+  <div class="countdown">
+    <div><b id="days">0</b><span>HARI</span></div>
+    <div><b id="hours">0</b><span>JAM</span></div>
+    <div><b id="minutes">0</b><span>MENIT</span></div>
+    <div><b id="seconds">0</b><span>DETIK</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">Our Moments</div>
+  <h2>Galeri</h2>
+  <div class="gallery">
+    <img src="foto-1.jpg" alt="Foto 1">
+    <img src="foto-2.jpg" alt="Foto 2">
+    <img src="foto-3.jpg" alt="Foto 3">
+    <img src="foto-4.jpg" alt="Foto 4">
+  </div>
+</section>
+
+<section>
+  <div class="kicker">RSVP</div>
+  <h2>Konfirmasi Kehadiran</h2>
+  <p>Mohon konfirmasi kehadiran melalui WhatsApp.</p>
+  <a class="btn" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20akan%20hadir%20di%20acara%20pernikahan." target="_blank">Konfirmasi WhatsApp</a>
+</section>
+
+<section>
+  <div class="kicker">Wedding Gift</div>
+  <h2>Tanda Kasih</h2>
+  <p>Bagi keluarga dan sahabat yang ingin memberikan tanda kasih, dapat melalui:</p>
+  <div class="card">
+    <div class="label">Bank</div>
+    <div class="time">1234567890</div>
+    <p>Atas Nama: Nama Mempelai</p>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="names">Nama &amp; Nama</div>
+  <p>Terima kasih atas doa dan kehadiran Anda.</p>
+  <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+</div>
+
+</div>
+
+<script>
+const target = new Date("December 12, 2026 09:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const d = Math.max(0, target-now);
+  document.getElementById("days").textContent = Math.floor(d/86400000);
+  document.getElementById("hours").textContent = Math.floor(d%86400000/3600000);
+  document.getElementById("minutes").textContent = Math.floor(d%3600000/60000);
+  document.getElementById("seconds").textContent = Math.floor(d%60000/1000);
+},1000);
+</script>
+</body>
+</html>
