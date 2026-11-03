@@ -25,6 +25,9 @@ h2{font-size:30px;font-weight:400;margin:10px 0 25px;color:#4a3a2e}
 h2::after{content:"";display:block;width:38px;height:1px;background:var(--gold);margin:14px auto 0}
 .names{font-size:34px;margin:25px 0;color:var(--accent)}
 .date{font:14px Arial,sans-serif;letter-spacing:2px}
+.guest-box{margin:28px auto 10px;padding:16px 22px;max-width:430px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.guest-label{font:10px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+.guest-name{font-size:25px;color:var(--accent);margin:0}
 .divider{width:60px;height:1px;background:var(--gold);margin:28px auto}
 .btn{display:inline-block;padding:13px 24px;border:1px solid var(--gold);color:#5d4938;background:#fffaf2cc;
 text-decoration:none;font:13px Arial,sans-serif;letter-spacing:1px;border-radius:2px;margin:5px}
@@ -52,7 +55,12 @@ text-decoration:none;font:13px Arial,sans-serif;letter-spacing:1px;border-radius
     <div class="divider"></div>
     <div class="date">MINGGU, 12 DESEMBER 2026</div>
     <p style="color:var(--muted)">Dengan penuh kebahagiaan, kami mengundang Anda untuk hadir di hari istimewa kami.</p>
-    <a class="btn" href="#acara">Buka Undangan</a>
+         <div class="guest-box">
+       <p class="guest-label">Kepada Yth.</p>
+       <p class="guest-name" id="guestName">Tamu Undangan</p>
+       <p style="margin:7px 0 0;color:var(--muted);font-size:13px">di tempat</p>
+     </div>
+<a class="btn" href="#acara">Buka Undangan</a>
   </div>
 </section>
 
@@ -115,7 +123,7 @@ text-decoration:none;font:13px Arial,sans-serif;letter-spacing:1px;border-radius
   <div class="kicker">RSVP</div>
   <h2>Konfirmasi Kehadiran</h2>
   <p>Mohon konfirmasi kehadiran melalui WhatsApp.</p>
-  <a class="btn" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20akan%20hadir%20di%20acara%20pernikahan." target="_blank">Konfirmasi WhatsApp</a>
+  <a class="btn" id="rsvpBtn" href="https://wa.me/6281234567890" target="_blank">Konfirmasi WhatsApp</a>
 </section>
 
 <section>
@@ -138,6 +146,21 @@ text-decoration:none;font:13px Arial,sans-serif;letter-spacing:1px;border-radius
 </div>
 
 <script>
+const params = new URLSearchParams(window.location.search);
+const guest = (params.get("to") || "").trim();
+const guestName = document.getElementById("guestName");
+
+if (guest) {
+  guestName.textContent = guest;
+}
+
+const rsvpBtn = document.getElementById("rsvpBtn");
+if (rsvpBtn) {
+  const messageName = guest || "Tamu Undangan";
+  const message = `Halo, saya ${messageName}. Saya ingin mengonfirmasi kehadiran di acara pernikahan.`;
+  rsvpBtn.href = "https://wa.me/6281234567890?text=" + encodeURIComponent(message);
+}
+
 const target = new Date("December 12, 2026 09:00:00").getTime();
 setInterval(() => {
   const now = new Date().getTime();
